@@ -1,9 +1,8 @@
-# Course online-shop
+# Courses online-shop
 - Node.js
 - Express
 - MongoDB, Mongoose
-- SendGrid mail service
-- Heroku hosted
+- SendGrid mail service (domain mail not included)
 - Using backend validation, middleware, authentication, recovery password
 
 ## Project setup
