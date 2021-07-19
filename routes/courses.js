@@ -10,7 +10,7 @@ function isOwner(course, req) {
 }
 
 router.get('/', async (req, res) => {
-  res.set('Content-Security-Policy', 'default-src *; img-src *; style-src *; font-src https://fonts.gstatic.com data:;');
+  res.set('Content-Security-Policy', 'default-src *; img-src *; style-src *; font-src https://fonts.gstatic.com data:; script-src https://cdnjs.cloudflare.com;');
 
   try {
     const courses = await Course.find().lean();
