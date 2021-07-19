@@ -16,6 +16,7 @@ const transporter = nodemailer.createTransport(sendgrid({
 }))
 
 router.get('/login', async (req, res) => {
+    res.set('Content-Security-Policy', 'default-src \'self\'; style-src *; font-src https://fonts.gstatic.com data:; script-src \'self\' https://cdnjs.cloudflare.com;');
 
   res.render('auth/login', {
     title: 'Login',

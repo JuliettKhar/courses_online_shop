@@ -4,6 +4,8 @@ const auth = require('../middleware/auth');
 const User = require('../models/user')
 
 router.get('/', async (req, res) => {
+  res.set('Content-Security-Policy', 'default-src \'self\'; img-src *; style-src *; font-src https://fonts.gstatic.com data:; script-src \'self\' https://cdnjs.cloudflare.com;');
+
   res.render('profile', {
     title: 'Profile',
     isProfile: true,

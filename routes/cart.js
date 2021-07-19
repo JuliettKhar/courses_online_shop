@@ -26,6 +26,8 @@ router.post('/add', auth, async (req, res) => {
 })
 
 router.get('/', auth, async (req, res) => {
+  res.set('Content-Security-Policy', 'default-src \'self\'; style-src *; font-src https://fonts.gstatic.com data:; script-src \'self\' https://cdnjs.cloudflare.com;');
+
   const user = await req.user.populate('cart.items.courseId').execPopulate()
   const courses = mapCartItems(user.cart)
 

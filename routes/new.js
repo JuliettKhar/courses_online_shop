@@ -6,6 +6,8 @@ const {courseValidators} = require('../utils/validators')
 const {validationResult} = require('express-validator/check');
 
 router.get('/', auth, (req, res) => {
+  res.set('Content-Security-Policy', 'default-src \'self\'; style-src *; font-src https://fonts.gstatic.com data:; script-src \'self\' https://cdnjs.cloudflare.com;');
+
   res.render('new', {
     title: "Add course",
     isNew: true

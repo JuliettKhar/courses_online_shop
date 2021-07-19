@@ -4,6 +4,8 @@ const Order = require('../models/order');
 const auth = require('../middleware/auth');
 
 router.get('/', auth, async (req, res) => {
+  res.set('Content-Security-Policy', 'default-src \'self\'; style-src *; font-src https://fonts.gstatic.com data:; script-src \'self\' https://cdnjs.cloudflare.com;');
+
   try {
     const orders = await Order
       .find({'user.userId': req.user._id})
