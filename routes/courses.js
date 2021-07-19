@@ -10,6 +10,8 @@ function isOwner(course, req) {
 }
 
 router.get('/', async (req, res) => {
+  res.set('Content-Security-Policy', 'default-src *; img-src *; style-src *; font-src https://fonts.gstatic.com data:;');
+
   try {
     const courses = await Course.find().lean();
     const userId = req.user ? req.user._id.toString() : null
