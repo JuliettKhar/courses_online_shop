@@ -44,6 +44,8 @@ router.get('/:id', async (req, res) => {
 })
 
 router.get('/:id/edit', auth, async (req, res) => {
+  res.set('Content-Security-Policy', 'default-src \'self\'; img-src *; style-src *; font-src https://fonts.gstatic.com data:; script-src \'self\' https://cdnjs.cloudflare.com;');
+
   if (!req.query.allow) {
     return res.redirect('/')
   }
