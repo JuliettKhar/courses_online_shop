@@ -29,6 +29,8 @@ router.get('/', async (req, res) => {
 });
 
 router.get('/:id', async (req, res) => {
+  res.set('Content-Security-Policy', 'default-src \'self\'; img-src *; style-src *; font-src https://fonts.gstatic.com data:; script-src \'self\' https://cdnjs.cloudflare.com;');
+
   try {
     const course = await Course.findById(req.params.id).lean();
     res.render('course', {
