@@ -63,22 +63,18 @@ app.use('/orders', ordersRoute);
 app.use('/auth', authRoute);
 app.use('/profile', profileRoute);
 
-app.use(errorHandler)
+app.use(errorHandler);
 
+const PORT = process.env.PORT || 3000;
 
 async function start() {
   try {
-    const PORT = process.env.PORT || 3000;
-
     await mongoose.connect(keys.MONGO_DB_URI, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
       useFindAndModify: false
     });
-
-    app.listen(PORT, () => {
-      console.log(`run port ${PORT}`)
-    })
+    console.log(`Connected with Mongodb...`)
   } catch (e) {
     console.log(e)
   }
@@ -86,5 +82,9 @@ async function start() {
 }
 
 start();
+
+module.exports = app.listen(PORT, () => {
+  console.log(`run port ${PORT}`)
+});
 
 

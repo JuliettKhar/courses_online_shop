@@ -3,7 +3,7 @@ const {Router} = require('express');
 const router = Router();
 const auth = require('../middleware/auth');
 const {courseValidators} = require('../utils/validators')
-const {validationResult} = require('express-validator/check');
+const {validationResult} = require('express-validator');
 
 router.get('/', auth, (req, res) => {
   res.set('Content-Security-Policy', 'default-src \'self\'; style-src *; font-src https://fonts.gstatic.com data:; script-src \'self\' https://cdnjs.cloudflare.com;');

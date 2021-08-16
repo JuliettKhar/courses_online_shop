@@ -1,4 +1,5 @@
 node_modules
 keys/keys.dev.js
+keys/keys.test.js
 prettier.xml
 .idea

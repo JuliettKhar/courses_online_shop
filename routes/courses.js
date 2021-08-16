@@ -3,7 +3,7 @@ const router = Router();
 const Course = require('../models/course');
 const auth = require('../middleware/auth');
 const {courseValidators} = require('../utils/validators')
-const {validationResult} = require('express-validator/check');
+const {validationResult} = require('express-validator');
 
 function isOwner(course, req) {
   return course.userId.toString() === req.user._id.toString()
@@ -22,6 +22,7 @@ router.get('/', async (req, res) => {
       userId,
       courses
     });
+
   } catch (e) {
     console.log(e);
   }
