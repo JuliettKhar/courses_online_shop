@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon index.js",
-    "test": "NODE_ENV=test jest --watch"
+    "test": "NODE_ENV=test jest --watch --detectOpenHandles"
   },
   "keywords": [],
   "author": "",
