@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon index.js",
-    "test": "NODE_ENV=test jest --watch --detectOpenHandles"
+    "test": "NODE_ENV=test jest --watchAll --detectOpenHandles"
   },
   "keywords": [],
   "author": "",
@@ -29,6 +29,7 @@
     "uuid": "^8.3.2"
   },
   "devDependencies": {
+    "cheerio": "^1.0.0-rc.10",
     "jest": "^27.0.6",
     "nodemon": "^2.0.7",
     "supertest": "^6.1.5"

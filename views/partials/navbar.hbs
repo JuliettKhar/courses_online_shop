@@ -39,13 +39,13 @@
                     <li><a href="/profile">Profile</a></li>
                 {{/if}}
 
-                <li><a href="/auth/logout">Logout</a></li>
+                <li><a href="/authSpec/logout">Logout</a></li>
 
             {{else}}
                 {{#if isLogin}}
-                    <li class="active"><a href="/auth/login#login">Login</a></li>
+                    <li class="active"><a href="/authSpec/login#login">Login</a></li>
                 {{else}}
-                    <li><a href="/auth/login#login">Login</a></li>
+                    <li><a href="/authSpec/login#login">Login</a></li>
                 {{/if}}
             {{/if}}
         </ul>
